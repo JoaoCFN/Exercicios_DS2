@@ -1,59 +1,59 @@
-def assembleDozens(num, number_in_full, units, dozens, others_dozens): 
-    # numbers less than 19
+def assembleTens(num, word, units, tens, others_tens): 
+    # numbers less than 20
     if num < 20:
-        for key, value in dozens.items():
+        for key, value in tens.items():
             if num == key:
-                number_in_full += value
+                word += value
     # numbers greater than 19
     else:
-        # dozens
-        dozens = (num // 10) * 10
-        for key, value in others_dozens.items():
-            if dozens == key:
-                number_in_full += value
+        # tens
+        tens = (num // 10) * 10
+        for key, value in others_tens.items():
+            if tens == key:
+                word += value
         # unit
         unit = num % 10
         for key, value in units.items():
             if unit != 0 and unit == key:
-                number_in_full += " e {}".format(value)
+                word += " e {}".format(value)
 
-    return number_in_full
+    return word
 
-def assembleNumbers(num, number_in_full, units, dozens, others_dozens):
+def assembleUnits(num, word, units):
+    for key, value in units.items():
+        if num == key:
+            word += value
+
+def assembleNumbers(num, word, units, tens, others_tens):
     lenNum = len(str(num))
 
     if lenNum == 1:
         # positives
-        for key, value in units.items():
-            if num == key:
-                number_in_full += value
+        assembleUnits(num, word, units)
     elif lenNum == 2:
         # positives
         if num > 0:
-            number_in_full += assembleDozens(num, number_in_full, units, dozens, others_dozens)
+            word += assembleTens(num, word, units, tens, others_tens)
         # negatives
         else:
-            unit = abs(num)
-            for key, value in units.items():
-                if unit == key:
-                    number_in_full += "menos {}".format(value)
+            word += "menos " + assembleUnits(abs(num), word, units)
     elif lenNum == 3:
         # negatives
-        number_in_full += "menos " + assembleDozens(abs(num), number_in_full, units, dozens, others_dozens)
+        word += "menos " + assembleTens(abs(num), word, units, tens, others_tens)
 
-    return number_in_full
+    return word
 
 def main():
-    number_in_full = ""
+    word = ""
 
     units = {0: "zero", 1: "um", 2: "dois", 3: "três", 4: "quatro", 5: "cinco", 6: "seis", 7: "sete", 8: "oito", 9: "nove"}
 
-    dozens = {10: "dez", 11: "onze", 12: "doze", 13: "treze", 14: "quatorze", 15: "quinze", 16: "dezesseis", 17: "dezessete", 18: "dezoito", 19: "dezenove"}
+    tens = {10: "dez", 11: "onze", 12: "doze", 13: "treze", 14: "quatorze", 15: "quinze", 16: "dezesseis", 17: "dezessete", 18: "dezoito", 19: "dezenove"}
 
-    others_dozens = {20: "vinte", 30: "trinta", 40: "quarenta", 50: "cinquenta", 60: "sessenta", 70: "setenta", 80: "oitenta", 90: "noventa"}
+    others_tens = {20: "vinte", 30: "trinta", 40: "quarenta", 50: "cinquenta", 60: "sessenta", 70: "setenta", 80: "oitenta", 90: "noventa"}
 
     num = int(input("Digite um número inteiro entre -99 e 99 \n"))
-    written_number = assembleNumbers(num, number_in_full, units, dozens, others_dozens)
+    written_number = assembleNumbers(num, word, units, tens, others_tens)
     print(written_number)
     
 main()

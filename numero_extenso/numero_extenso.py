@@ -1,4 +1,4 @@
-def assembleTens(num, word, units, tens, others_tens): 
+def assemble_tens(num, word, units, tens, others_tens): 
     # numbers less than 20
     if num < 20:
         for key, value in tens.items():
@@ -19,27 +19,27 @@ def assembleTens(num, word, units, tens, others_tens):
 
     return word
 
-def assembleUnits(num, word, units):
+def assemble_units(num, word, units):
     for key, value in units.items():
         if num == key:
             word += value
 
-def assembleWord(num, word, units, tens, others_tens):
-    lenNum = len(str(num))
+def assemble_word(num, word, units, tens, others_tens):
+    len_num = len(str(num))
 
-    if lenNum == 1:
+    if len_num == 1:
         # positives
-        assembleUnits(num, word, units)
-    elif lenNum == 2:
+        assemble_units(num, word, units)
+    elif len_num == 2:
         # positives
         if num > 0:
-            word += assembleTens(num, word, units, tens, others_tens)
+            word += assemble_tens(num, word, units, tens, others_tens)
         # negatives
         else:
-            word += "menos " + assembleUnits(abs(num), word, units)
-    elif lenNum == 3:
+            word += "menos " + assemble_units(abs(num), word, units)
+    elif len_num == 3:
         # negatives
-        word += "menos " + assembleTens(abs(num), word, units, tens, others_tens)
+        word += "menos " + assemble_tens(abs(num), word, units, tens, others_tens)
 
     return word
 
@@ -57,7 +57,7 @@ def main():
         try:
             num = int(input("Digite um número inteiro entre -99 e 99 \n"))
             if num >= -99 and num <= 99:
-                written_number = assembleWord(num, word, units, tens, others_tens)
+                written_number = assemble_word(num, word, units, tens, others_tens)
                 print(written_number)
             else: 
                 print("Informe um número válido")

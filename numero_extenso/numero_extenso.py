@@ -24,7 +24,7 @@ def assembleUnits(num, word, units):
         if num == key:
             word += value
 
-def assembleNumbers(num, word, units, tens, others_tens):
+def assembleWord(num, word, units, tens, others_tens):
     lenNum = len(str(num))
 
     if lenNum == 1:
@@ -45,6 +45,7 @@ def assembleNumbers(num, word, units, tens, others_tens):
 
 def main():
     word = ""
+    num = -100
 
     units = {0: "zero", 1: "um", 2: "dois", 3: "três", 4: "quatro", 5: "cinco", 6: "seis", 7: "sete", 8: "oito", 9: "nove"}
 
@@ -52,8 +53,15 @@ def main():
 
     others_tens = {20: "vinte", 30: "trinta", 40: "quarenta", 50: "cinquenta", 60: "sessenta", 70: "setenta", 80: "oitenta", 90: "noventa"}
 
-    num = int(input("Digite um número inteiro entre -99 e 99 \n"))
-    written_number = assembleNumbers(num, word, units, tens, others_tens)
-    print(written_number)
+    while num < -99 or num > 99:
+        try:
+            num = int(input("Digite um número inteiro entre -99 e 99 \n"))
+            if num >= -99 and num <= 99:
+                written_number = assembleWord(num, word, units, tens, others_tens)
+                print(written_number)
+            else: 
+                print("Informe um número válido")
+        except ValueError: 
+            print("Informe um valor válido")
     
 main()

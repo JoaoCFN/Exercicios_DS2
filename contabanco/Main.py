@@ -30,6 +30,6 @@ def main():
     ag2.criar_conta(cb4)
     cb4.depositar(1800)
 
-    print(banco_brasil.listar_agencias())
+    banco_brasil.listar_agencias()
 
 main()

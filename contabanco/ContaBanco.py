@@ -46,16 +46,9 @@ class ContaBanco():
             Saldo: R${}
             Limite de saque R$: {}
         '''.format(
-            self.titular,
+            self.titular.nome_completo,
             self._num_conta,
             self._tipo_conta,
             self.saldo,
             self._limite_saque
         ))
-
-# def main():
-#     conta1 = ContaBanco("Juca", "C")
-#     infos_conta = conta1.exibir_info()
-#     print(infos_conta)
-    
-# main()

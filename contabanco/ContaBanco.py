@@ -1,5 +1,5 @@
 class ContaBanco():
-    id_conta = 0
+    _id_conta = 0
 
     def __init__(self, titular, tipo_conta):
         self.titular = titular
@@ -7,8 +7,8 @@ class ContaBanco():
         self._saldo = 0.0
         self._limite_saque = 1000.0
         #Incremento do inicializador
-        ContaBanco.id_conta += 1
-        self._num_conta = ContaBanco.id_conta
+        ContaBanco._id_conta += 1
+        self._num_conta = ContaBanco._id_conta
 
     @property
     def tipo_conta(self):

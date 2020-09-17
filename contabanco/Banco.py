@@ -5,7 +5,7 @@ class Banco():
         self._lista_agencias = []
 
     def adicionar_agencia(self, agencia):
-        agencia_nao_existe = self._lista_agencias.count(agencia.numero) == 0
+        agencia_nao_existe = self._lista_agencias.count(agencia) == 0
         if agencia_nao_existe:
             self._lista_agencias.append(agencia) 
 

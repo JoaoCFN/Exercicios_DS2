@@ -12,7 +12,7 @@ class Animal():
 
     def comer(self):
         self._peso += 0.7
-        if self._energia <= 75:
+        if self._energia < 75:
             self._energia += 25.0
         else: 
             self._energia = 100.0

@@ -8,11 +8,11 @@ class Churros(Produto):
         self.tem_cobertura = tem_cobertura
     
     @property
-    def tem_cobetura(self):
-        return self.tem_cobertura
+    def tem_cobertura(self):
+        return self._tem_cobertura
     
-    @tem_cobetura.setter
-    def tem_cobetura(self, decisao):
+    @tem_cobertura.setter
+    def tem_cobertura(self, decisao):
         decisao_conv = str(decisao).upper()
         if decisao_conv == "S":
             self._tem_cobertura = "Sim"

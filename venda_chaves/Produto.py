@@ -8,8 +8,8 @@ class Produto():
         self._preco_base = preco_base 
 
     def preco(self):
-        return _preco_base * _preco_tamanho[_tamanho]
+        return self._preco_base * Produto._preco_tamanho[self._tamanho]
 
     def info(self):
-        return "Nome: {} \nSabor: {} \nTamanho: {} \nPreço {}".format(
+        return "\nNome: {} \nSabor: {} \nTamanho: {} \nPreço R${}".format(
             self._nome, self._sabor, self._tamanho, self.preco())

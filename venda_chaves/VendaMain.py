@@ -54,10 +54,10 @@ def comprar_produto(opcoes_sabor, tamanho):
     else:
         if opcoes_sabor[0] == Refresco.sabores[0]:
             acucar = input("Você quer açúcar? (S para Sim / Outra tecla para Não)\n")
-            produto = Refresco(tamanho, int(sabor), acucar)
+            produto = Refresco(int(sabor), tamanho, acucar)
         else:
             cobertura = input("Você quer cobertura? (S para Sim / Outra tecla para Não)\n")
-            produto = Churros(tamanho, int(sabor), cobertura)
+            produto = Churros(int(sabor), tamanho, cobertura)
         itens.append(produto)
 
 

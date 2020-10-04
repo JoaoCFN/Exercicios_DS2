@@ -11,5 +11,5 @@ class Produto():
         return self._preco_base * Produto._preco_tamanho[self._tamanho]
 
     def info(self):
-        return "\nNome: {} \nSabor: {} \nTamanho: {} \nPreço R${}".format(
+        return "\nNome: {} \nSabor: {} \nTamanho: {} \nPreço R${:.2f}".format(
             self._nome, self._sabor, self._tamanho, self.preco())

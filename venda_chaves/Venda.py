@@ -33,6 +33,6 @@ class Venda():
         return info_produtos
     
     def extrato_venda(self):
-        extrato = "Itens Vendidos: {} \nPreço final da venda R$: {} \nForma de pagamento: {}".format(self.ler_itens(), self.calcular_preco_final(), self.forma_pagamento)
+        extrato = "Itens Vendidos: {} \nPreço final da venda R$: {:.2f} \nForma de pagamento: {}".format(self.ler_itens(), self.calcular_preco_final(), self.forma_pagamento)
 
         return extrato

@@ -12,7 +12,8 @@ class Gerenciador:
         self.voo2 = Voo(SSA(), BER(), FEN())
         self.voo3 = Voo(MIA(), SYD())
         self.voo4 = Voo(MIA(), SYD(), BER(), DXB())
-
+        print(self.voo1.num_voo, self.voo2.num_voo, self.voo3.num_voo, self.voo4.num_voo)
+        
         self.voos_disponiveis = [self.voo1, self.voo2, self.voo3, self.voo4]
 
     @staticmethod
@@ -24,7 +25,6 @@ class Gerenciador:
 
     def reservar(self, voo, classe):
         voo_escolhido = self.voos_disponiveis[voo - 1]
-        print(voo_escolhido.origem, voo_escolhido.destino, voo_escolhido.escala)
         reserva = Reserva(voo_escolhido, classe)
 
         return self.ag.realizar_reserva(reserva)

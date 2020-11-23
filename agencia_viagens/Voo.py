@@ -9,8 +9,10 @@ class Voo:
     
     def get_taxa(self):
         taxa_total = self.origem.taxa_aeroporto + self.destino.taxa_aeroporto 
+        
         for escala in self.escala:
             taxa_total += escala.taxa_aeroporto
+            
         return taxa_total
 
     def get_info_voo(self):
@@ -19,6 +21,6 @@ class Voo:
         if(len(self.escala) > 0):
             info_voo += "| Escala: " 
             for escala in self.escala:
-                info_voo += "{}, ".format(escala)
+                info_voo += "{}, ".format(escala.nome)
 
         return info_voo

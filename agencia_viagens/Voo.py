@@ -1,5 +1,5 @@
 class Voo:
-    num_voo = 999
+    num_voo = 99
 
     def __init__(self, origem, destino, *escala):
         self.origem = origem
@@ -14,7 +14,11 @@ class Voo:
         return taxa_total
 
     def get_info_voo(self):
-        info = "Nº Vôo: {} \nOrigem: {} \nEscala:".format(self.origem, self.destino)
+        info_voo = "Nº Vôo: {} \nOrigem: {} | Destino: {}".format(Voo.num_voo, self.origem.nome, self.destino.nome)
+
         if(len(self.escala) > 0):
+            info_voo += "| Escala: " 
             for escala in self.escala:
-                info += "{}, ".format(escala)
+                info_voo += "{}, ".format(escala)
+
+        return info_voo

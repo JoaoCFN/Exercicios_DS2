@@ -11,10 +11,18 @@ class Reserva:
         valorTotal = 0
 
         if classeConvUpper == "X":
-            valorTotal = voo.get_taxa() + 200 
+            valorTotal = self.voo.get_taxa() + 200 
             return valorTotal
 
-        return voo.get_taxa()
+        return self.voo.get_taxa()
 
     def get_info_reserva(self):
-        returnText = "Dados do vôo: \n {} \nClasse: {} \nNúmero da reserva: {}\nPreço final (R$): {} \n".format(voo.get_info_voo(), self.classe, Reserva.num_reserva, self.get_preco_final())
+        nome_classe = ""
+        if self.classe.upper() == "X": 
+            nome_classe = "Executiva"
+        else: 
+            nome_classe = "Econômica"
+
+        info_reserva = "{} \nClasse: {} \nPreço final (R$): {} \n".format(self.voo.get_info_voo(), nome_classe, self.get_preco_final())
+
+        return info_reserva

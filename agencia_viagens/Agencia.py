@@ -10,6 +10,8 @@ class Agencia:
     def buscar_reserva(self, numero_reserva):
         for reserva in self.reservas_realizadas:
             if numero_reserva == reserva.num_reserva:
+                print(numero_reserva)
+                print(reserva.num_reserva)
                 return reserva.get_info_reserva()
 
             return "Reserva não encontrada"

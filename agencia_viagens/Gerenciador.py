@@ -26,6 +26,7 @@ class Gerenciador:
     def reservar(self, voo, classe):
         voo_escolhido = self.voos_disponiveis[voo - 1]
         reserva = Reserva(voo_escolhido, classe)
+        print(reserva.num_reserva)
 
         return self.ag.realizar_reserva(reserva)
 

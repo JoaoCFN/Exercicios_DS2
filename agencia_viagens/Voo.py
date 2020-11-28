@@ -1,12 +1,12 @@
 class Voo:
-    contador_voo = 99
+    num_voo = 99
 
     def __init__(self, origem, destino, *escala):
         self.origem = origem
         self.destino = destino
         self.escala = escala
-        Voo.contador_voo += 1
-        self.num_voo = Voo.contador_voo
+        Voo.num_voo += 1
+        self.num_voo = Voo.num_voo
     
     def get_taxa(self):
         taxa_total = self.origem.taxa_aeroporto + self.destino.taxa_aeroporto 

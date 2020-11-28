@@ -1,5 +1,12 @@
 from Gerenciador import Gerenciador
 
+# Patterns
+
+# Singletion - Gerenciador; 
+# Builder - Reserva;
+
+# Façade - Gerenciador;
+
 def main():
     gerenciador = Gerenciador()
     acao_inicial = 0  

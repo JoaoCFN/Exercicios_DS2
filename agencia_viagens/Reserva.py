@@ -6,7 +6,6 @@ class Reserva:
         self.classe = classe
         Reserva.contador_reserva += 1
         self.num_reserva = Reserva.contador_reserva
-        # print(voo.origem, voo.destino, voo.escala)
     
     def get_preco_final(self):
         classeConvUpper = self.classe.upper()

@@ -4,7 +4,6 @@ from Gerenciador import Gerenciador
 
 # Singletion - Gerenciador; 
 # Builder - Reserva;
-
 # Façade - Gerenciador;
 
 def main():

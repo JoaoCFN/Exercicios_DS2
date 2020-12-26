@@ -1,4 +1,4 @@
-#  :snake: Exercicios - Python
+#  :snake: Exercícios - Python
 
 ## :closed_book: Sobre 
  ### Este é um repositório de estudos
